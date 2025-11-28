@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3yhbyfep3711"]
+
+[ext_resource type="Texture2D" uid="uid://dxyrjlxx8l7f4" path="res://Assets/PlaceHolderBackground.jpg" id="1_tumq0"]
+[ext_resource type="PackedScene" uid="uid://dtouevoed70gg" path="res://Scenes/player.tscn" id="2_k5f4k"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pojwb"]
+normal = Vector2(0, 1)
+distance = 163.0
+
+[node name="Level" type="Sprite2D"]
+position = Vector2(455, 322)
+texture = ExtResource("1_tumq0")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(287, 116)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape2D_pojwb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.25, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_k5f4k")]
+position = Vector2(322, 208)

@@ -5,6 +5,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(1.7, 1.7)
 
 [node name="PlaceHolderPlayer" type="Sprite2D" parent="."]
 position = Vector2(0.999996, -3)
