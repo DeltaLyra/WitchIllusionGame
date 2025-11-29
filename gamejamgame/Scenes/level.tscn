@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3yhbyfep3711"]
+[gd_scene load_steps=5 format=3 uid="uid://d3yhbyfep3711"]
 
 [ext_resource type="Texture2D" uid="uid://dxyrjlxx8l7f4" path="res://Assets/PlaceHolderBackground.jpg" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://dtouevoed70gg" path="res://Scenes/player.tscn" id="2_k5f4k"]
+[ext_resource type="PackedScene" uid="uid://c7yhf5wpwcl0y" path="res://Scenes/pickup_object.tscn" id="3_6phgx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pojwb"]
 normal = Vector2(0, 1)
@@ -25,3 +26,6 @@ zoom = Vector2(1.25, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_k5f4k")]
 position = Vector2(780, 448)
+
+[node name="PickupObject" parent="." instance=ExtResource("3_6phgx")]
+position = Vector2(265, 364)
