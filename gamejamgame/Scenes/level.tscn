@@ -49,7 +49,4 @@ pickup_name = "glass"
 [node name="example_signal_receiver" type="Node2D" parent="."]
 script = ExtResource("1_754fn")
 
-[connection signal="got_item" from="Rock" to="example_signal_receiver" method="_on_rock_got_item"]
-[connection signal="got_item" from="Cheese" to="example_signal_receiver" method="_on_cheese_got_item"]
-
 [editable path="SaltShaker"]
