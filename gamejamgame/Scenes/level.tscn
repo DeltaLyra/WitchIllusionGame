@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3yhbyfep3711"]
+[gd_scene load_steps=9 format=3 uid="uid://d3yhbyfep3711"]
 
+[ext_resource type="Script" uid="uid://cvgi2ir73vyr5" path="res://Scripts/example_singal_receiver.gd" id="1_754fn"]
 [ext_resource type="Texture2D" uid="uid://dxyrjlxx8l7f4" path="res://Assets/PlaceHolderBackground.jpg" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://dtouevoed70gg" path="res://Scenes/player.tscn" id="2_k5f4k"]
 [ext_resource type="PackedScene" uid="uid://c7yhf5wpwcl0y" path="res://Scenes/pickup_object.tscn" id="3_6phgx"]
 [ext_resource type="PackedScene" uid="uid://qantuhs3r4hy" path="res://Scenes/alert_object.tscn" id="4_81xng"]
-[ext_resource type="Script" uid="uid://dunl6ecp1o7w" path="res://Scripts/SceneInstanceScripts/alert_object.gd" id="5_wqkje"]
+[ext_resource type="Texture2D" uid="uid://ch7rijln6guf3" path="res://Assets/PlaceHolderGlassPile.png" id="5_0f350"]
+[ext_resource type="Texture2D" uid="uid://bea3nnsev4jdv" path="res://Assets/PlaceHolderCheeseItem.png" id="6_754fn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pojwb"]
 normal = Vector2(0, 1)
@@ -31,7 +33,23 @@ position = Vector2(780, 448)
 
 [node name="Rock" parent="." instance=ExtResource("3_6phgx")]
 position = Vector2(265, 364)
+item_name = "rock"
+
+[node name="Cheese" parent="." instance=ExtResource("3_6phgx")]
+position = Vector2(65, 366)
+item_name = "cheese"
+item_image = ExtResource("6_754fn")
 
 [node name="SaltShaker" parent="." instance=ExtResource("4_81xng")]
 position = Vector2(537, 367)
-script = ExtResource("5_wqkje")
+will_be_pickup = true
+pickup_texture = ExtResource("5_0f350")
+pickup_name = "glass"
+
+[node name="example_signal_receiver" type="Node2D" parent="."]
+script = ExtResource("1_754fn")
+
+[connection signal="got_item" from="Rock" to="example_signal_receiver" method="_on_rock_got_item"]
+[connection signal="got_item" from="Cheese" to="example_signal_receiver" method="_on_cheese_got_item"]
+
+[editable path="SaltShaker"]
