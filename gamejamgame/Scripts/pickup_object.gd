@@ -12,9 +12,8 @@ func _on_mouse_exited() -> void:
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	#We don't need to use the information from any of these parameters except the input type to check it was a mouse click. We don't care what shape is being clicked or what viewport it's in.
-	#Using an action I defined in input map because it's simpler than using the button index stuff... work smarter not harder kids
-	#Tried using echo to prevent it from firing multiple times 
-	#It still fired multiple times... but we remove the item before you release it anyway so we don't worry about that ;)
-	if event.is_action("LeftMouseClick"):
+	#Using an action I defined in input map because it's simpler than using the button index stuff
+	#FIXED THAT MULTIPLE CLICK FIRING BUG!!
+	if event.is_action_pressed("LeftMouseClick"):
 		print("Got item!")
 		queue_free()
