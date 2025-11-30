@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var icon: Sprite2D = $Icon
+@onready var item: Sprite2D = $Item
 
 
 #When the item is hovered over, the click icon will appear. When it leaves, it will disappear.
