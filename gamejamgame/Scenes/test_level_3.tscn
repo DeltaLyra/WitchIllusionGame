@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjf5ilik8fqs0"]
+
+[ext_resource type="PackedScene" uid="uid://d3yhbyfep3711" path="res://Scenes/level.tscn" id="1_sfh6r"]
+
+[node name="TestLevel3" instance=ExtResource("1_sfh6r")]
+
+[editable path="SaltShaker"]

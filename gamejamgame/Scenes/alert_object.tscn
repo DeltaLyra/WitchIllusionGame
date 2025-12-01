@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://qantuhs3r4hy"]
+
+[ext_resource type="Script" uid="uid://ddsxa883qer0q" path="res://Scripts/alert_object.gd" id="1_golp6"]
+[ext_resource type="Texture2D" uid="uid://hp7kndt0ohmp" path="res://Assets/PlaceHolderAlertObject.png" id="2_bqxqp"]
+[ext_resource type="Texture2D" uid="uid://dkn874sq7p10q" path="res://Assets/PlaceHolderAlertItemIcon.jpg" id="3_vkjlt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_867ys"]
+size = Vector2(195, 222)
+
+[node name="alert_object" type="Area2D"]
+script = ExtResource("1_golp6")
+
+[node name="Item" type="Sprite2D" parent="."]
+position = Vector2(24, -47)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_bqxqp")
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(118, -136)
+scale = Vector2(0.120686, 0.121007)
+texture = ExtResource("3_vkjlt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(48.5, -74)
+shape = SubResource("RectangleShape2D_867ys")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
