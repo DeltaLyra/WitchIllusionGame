@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://be0w55sbrpy8l"]
+[gd_scene load_steps=3 format=3 uid="uid://be0w55sbrpy8l"]
 
 [ext_resource type="PackedScene" uid="uid://d3yhbyfep3711" path="res://Scenes/level.tscn" id="1_cu7ek"]
+[ext_resource type="PackedScene" uid="uid://bjhcvm6svkwjq" path="res://Scenes/alert_event_manager.tscn" id="2_qpu34"]
 
 [node name="TestLevel2" instance=ExtResource("1_cu7ek")]
+
+[node name="AlertEventManager" parent="." index="8" instance=ExtResource("2_qpu34")]
+position = Vector2(-8, -8)
 
 [editable path="SaltShaker"]

@@ -46,7 +46,7 @@ will_be_pickup = true
 pickup_texture = ExtResource("5_0f350")
 pickup_name = "glass"
 
-[node name="example_signal_receiver" type="Node2D" parent="."]
+[node name="ExampleSignalReceiver" type="Node2D" parent="."]
 script = ExtResource("1_754fn")
 
 [editable path="SaltShaker"]

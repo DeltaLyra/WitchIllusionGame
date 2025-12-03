@@ -21,7 +21,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	#We don't need to use the information from any of these parameters except the input type to check it was a mouse click. We don't care what shape is being clicked or what viewport it's in.
 	#Using an action I defined in input map because it's simpler than using the button index stuff
 	if event.is_action_pressed("LeftMouseClick"):
-		SignalManager.alert.emit
+		SignalManager.alert.emit()
 		print("Triggered alert event!")
 		queue_free()
 		if will_be_pickup:
