@@ -7,5 +7,6 @@
 
 [node name="AlertEventManager" parent="." index="8" instance=ExtResource("2_qpu34")]
 position = Vector2(-8, -8)
+room_item = "cheese"
 
 [editable path="SaltShaker"]
