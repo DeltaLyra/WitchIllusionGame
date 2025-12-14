@@ -5,12 +5,19 @@ extends Node2D
 
 const EYE_BAT = preload("res://Scenes/eye_bat.tscn") #loads eyebat scene so we can instantiate it
 @onready var timer: Timer = $Timer #ref var to timer so we can make it start when alert signal is received.
+var level
+var player
+var sprite
 
 func _ready() -> void:
 	SignalManager.alert.connect(_on_alert)
+	level = self.get_parent()
+	player = level.get_node("Player") 
+	sprite = player.get_node("AnimatedSprite2D") # get reference to player and then its sprite so we can change it for transformation
 
 func _on_alert(): #when alert signal is received, start the timer
 	print("signal received!")
+	_transform_player()
 	timer.start()
 	print("timer started!")
 	
@@ -20,6 +27,14 @@ func _spawn_eye ():
 	eye_bat.get_node("AnimationPlayer").play("fly_around") #Start the flight animation, making sure to get the animation node from our scene
 	print("bat moved!")
 
+func _transform_player (): #add parameter for what item the player uses
+	var item = "rock"
+	match item:
+		"rock":
+			sprite.play("Rock")
+			print("rock!")
+		_:
+			print("oops")
 func _on_timer_timeout() -> void: #once the timer runs out, spawn the bat and see if the player transformed into the right object.
 	print("times up!")
 	_spawn_eye()
