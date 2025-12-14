@@ -2,6 +2,7 @@ extends Node2D
 
 @export var room_item: String # The item you must transform with to 
 
+
 const EYE_BAT = preload("res://Scenes/eye_bat.tscn") #loads eyebat scene so we can instantiate it
 @onready var timer: Timer = $Timer #ref var to timer so we can make it start when alert signal is received.
 
