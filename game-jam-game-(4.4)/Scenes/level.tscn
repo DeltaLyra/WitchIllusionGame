@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3yhbyfep3711"]
+
+[ext_resource type="Script" uid="uid://cvgi2ir73vyr5" path="res://Scripts/example_singal_receiver.gd" id="1_754fn"]
+[ext_resource type="Texture2D" uid="uid://dxyrjlxx8l7f4" path="res://Assets/PlaceHolderBackground.jpg" id="1_tumq0"]
+[ext_resource type="PackedScene" uid="uid://dtouevoed70gg" path="res://Scenes/player.tscn" id="2_k5f4k"]
+[ext_resource type="PackedScene" uid="uid://c7yhf5wpwcl0y" path="res://Scenes/pickup_object.tscn" id="3_6phgx"]
+[ext_resource type="PackedScene" uid="uid://qantuhs3r4hy" path="res://Scenes/alert_object.tscn" id="4_81xng"]
+[ext_resource type="Texture2D" uid="uid://ch7rijln6guf3" path="res://Assets/PlaceHolderGlassPile.png" id="5_0f350"]
+[ext_resource type="Texture2D" uid="uid://bea3nnsev4jdv" path="res://Assets/PlaceHolderCheeseItem.png" id="6_754fn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pojwb"]
+normal = Vector2(0, 1)
+distance = 163.0
+
+[node name="Level" type="Node2D"]
+
+[node name="LevelBackground" type="Sprite2D" parent="."]
+position = Vector2(455, 322)
+texture = ExtResource("1_tumq0")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(707, 269)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape2D_pojwb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(455, 322)
+zoom = Vector2(1.25, 1)
+
+[node name="Player" parent="." instance=ExtResource("2_k5f4k")]
+position = Vector2(780, 448)
+
+[node name="Rock" parent="." instance=ExtResource("3_6phgx")]
+position = Vector2(265, 364)
+item_name = "rock"
+
+[node name="Cheese" parent="." instance=ExtResource("3_6phgx")]
+position = Vector2(65, 366)
+item_name = "cheese"
+item_image = ExtResource("6_754fn")
+
+[node name="SaltShaker" parent="." instance=ExtResource("4_81xng")]
+position = Vector2(537, 367)
+will_be_pickup = true
+pickup_texture = ExtResource("5_0f350")
+pickup_name = "glass"
+
+[node name="example_signal_receiver" type="Node2D" parent="."]
+script = ExtResource("1_754fn")
+
+[editable path="SaltShaker"]

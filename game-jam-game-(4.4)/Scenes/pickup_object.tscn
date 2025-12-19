@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7yhf5wpwcl0y"]
+
+[ext_resource type="Script" uid="uid://qsqcm4q8wdva" path="res://Scripts/pickup_object.gd" id="1_kl40d"]
+[ext_resource type="Texture2D" uid="uid://pie03ctd5jat" path="res://Assets/PlaceHolderRockItem.png" id="2_vi6ql"]
+[ext_resource type="Texture2D" uid="uid://dub4qai1uevf1" path="res://Assets/PlaceHolderItemIcon.jpg" id="3_vi6ql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a60s"]
+size = Vector2(174, 156)
+
+[node name="PickupObject" type="Area2D"]
+script = ExtResource("1_kl40d")
+
+[node name="Item" type="Sprite2D" parent="."]
+position = Vector2(26, 0)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_vi6ql")
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(94, -76)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("3_vi6ql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(49, -41)
+shape = SubResource("RectangleShape2D_5a60s")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
