@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlewaisar5p4q"
-path="res://.godot/imported/game_peice.png-a72e3dc4484a91fb565afaa38745fe58.ctex"
+path="res://.godot/imported/game_peice.png-f8f2ece8a4e3d18c6c34a22ff94ea779.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/sprites/game_peice.png"
-dest_files=["res://.godot/imported/game_peice.png-a72e3dc4484a91fb565afaa38745fe58.ctex"]
+source_file="res://inventory/assests/sprites/game_peice.png"
+dest_files=["res://.godot/imported/game_peice.png-f8f2ece8a4e3d18c6c34a22ff94ea779.ctex"]
 
 [params]
 

@@ -13,8 +13,8 @@ func insert(item: InvItem):
 	else:
 		var emptyslots = slots.filter(func(slot): return slot.item == null)
 		if  !emptyslots.is_empty ():
-			itemslots[0].item = item
-			itemslots[0].amount = 1
+			emptyslots[0].item = item
+			emptyslots[0].amount = 1
 		update.emit()
 		
 func add_item(item: InvItem, amount := 1):

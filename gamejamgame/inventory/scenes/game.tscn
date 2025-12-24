@@ -1,9 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cibf36lkpu08m"]
+[gd_scene load_steps=12 format=3 uid="uid://cibf36lkpu08m"]
 
-[ext_resource type="PackedScene" uid="uid://n4fqdrpqqvjq" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://dfp2b87mjn076" path="res://assests/sprites/world_tileset.png" id="2_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://dm2w0prhyq68m" path="res://scenes/coin.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://n4fqdrpqqvjq" path="res://inventory/scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://dfp2b87mjn076" path="res://inventory/assests/sprites/world_tileset.png" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dm2w0prhyq68m" path="res://inventory/scenes/coin.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cre8jrcwcmfau" path="res://inventory/stick.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://c7yhf5wpwcl0y" path="res://Scenes/pickup_object.tscn" id="5_b8og7"]
+[ext_resource type="PackedScene" uid="uid://b7e7svbunxjiq" path="res://Scenes/inventory_manager.tscn" id="5_g40u6"]
+[ext_resource type="Resource" uid="uid://dy6ivxsa7bode" path="res://inventory/playerInv.tres" id="6_tc7k3"]
+[ext_resource type="Resource" uid="uid://cigxqntt0smsp" path="res://resources/rock.tres" id="8_sst2j"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
@@ -170,3 +174,12 @@ position = Vector2(48, -9)
 
 [node name="player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(0, -1)
+
+[node name="InventoryManager" parent="." instance=ExtResource("5_g40u6")]
+inv = ExtResource("6_tc7k3")
+
+[node name="PickupObject" parent="." instance=ExtResource("5_b8og7")]
+position = Vector2(-126, -33)
+item = ExtResource("8_sst2j")
+
+[editable path="stick"]
