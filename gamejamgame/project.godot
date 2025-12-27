@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="GameJamGame"
-run/main_scene="uid://cibf36lkpu08m"
+run/main_scene="uid://dbcoctvnpfcin"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SignalManager="*res://Scripts/signal_manager.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [input]
 

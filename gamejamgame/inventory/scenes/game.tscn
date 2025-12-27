@@ -181,5 +181,3 @@ inv = ExtResource("6_tc7k3")
 [node name="PickupObject" parent="." instance=ExtResource("5_b8og7")]
 position = Vector2(-126, -33)
 item = ExtResource("8_sst2j")
-
-[editable path="stick"]

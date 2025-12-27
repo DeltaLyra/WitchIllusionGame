@@ -21,5 +21,4 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	#FIXED THAT MULTIPLE CLICK FIRING BUG!!
 	if event.is_action_pressed("LeftMouseClick"):
 		SignalManager.got_item.emit(item)
-		print("Got item!")
 		queue_free()
