@@ -35,7 +35,9 @@ func _input(event: InputEvent) -> void:
 		elif event.is_action_pressed("2"):
 			item = "cheese"
 		_transform_player()
-func _transform_player (): #add parameter for what item the player uses
+
+func _transform_player(): #add parameter for what item the player uses
+	print("transform")
 	match item:
 		"rock":
 			sprite.play("Rock")
@@ -46,6 +48,9 @@ func _transform_player (): #add parameter for what item the player uses
 		_:
 			print("oops")
 func _on_timer_timeout() -> void: #once the timer runs out, spawn the bat and see if the player transformed into the right object.
-	allow_select = false;1111
+	allow_select = false;
 	print("times up!")
-	_spawn_eye()
+	if (item != room_item):
+		_spawn_eye()
+	else: 
+		sprite.play("Idle")
