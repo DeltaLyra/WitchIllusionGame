@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy05uu5y8cmrt"]
+
+[ext_resource type="Script" path="res://inventory/scripts/stick.gd" id="1_qm1yf"]
+[ext_resource type="Resource" path="res://inventory/stick.tres" id="2_sxxg6"]
+[ext_resource type="Texture2D" path="res://inventory/assests/sprites/stick-icon.png" id="3_itya4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1o5t"]
+size = Vector2(6, 14)
+
+[node name="stick" type="StaticBody2D"]
+script = ExtResource("1_qm1yf")
+item = ExtResource("2_sxxg6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_s1o5t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_itya4")
