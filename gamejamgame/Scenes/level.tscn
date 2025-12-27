@@ -1,12 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3yhbyfep3711"]
+[gd_scene load_steps=14 format=3 uid="uid://d3yhbyfep3711"]
 
 [ext_resource type="Script" uid="uid://cvgi2ir73vyr5" path="res://Scripts/example_singal_receiver.gd" id="1_754fn"]
 [ext_resource type="Texture2D" uid="uid://dxyrjlxx8l7f4" path="res://Assets/PlaceHolderBackground.jpg" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://dtouevoed70gg" path="res://Scenes/player.tscn" id="2_k5f4k"]
 [ext_resource type="PackedScene" uid="uid://c7yhf5wpwcl0y" path="res://Scenes/pickup_object.tscn" id="3_6phgx"]
+[ext_resource type="Resource" uid="uid://cigxqntt0smsp" path="res://resources/rock.tres" id="4_8c0lf"]
 [ext_resource type="PackedScene" uid="uid://qantuhs3r4hy" path="res://Scenes/alert_object.tscn" id="4_81xng"]
-[ext_resource type="Texture2D" uid="uid://ch7rijln6guf3" path="res://Assets/PlaceHolderGlassPile.png" id="5_0f350"]
-[ext_resource type="Texture2D" uid="uid://bea3nnsev4jdv" path="res://Assets/PlaceHolderCheeseItem.png" id="6_754fn"]
+[ext_resource type="Resource" uid="uid://bs2s41vsyh2i0" path="res://resources/cheese.tres" id="5_754fn"]
+[ext_resource type="Resource" uid="uid://bj21kpfoaxtmu" path="res://resources/glass.tres" id="7_bvt00"]
+[ext_resource type="Resource" uid="uid://dy6ivxsa7bode" path="res://inventory/playerInv.tres" id="9_bvt00"]
+[ext_resource type="PackedScene" uid="uid://cdbvm81bc42gk" path="res://inventory/scenes/inv_ui.tscn" id="10_oqgf2"]
+[ext_resource type="Texture2D" uid="uid://db4l1710wlwrh" path="res://GamejamAssets/ClosedEye.png" id="11_ha31o"]
+[ext_resource type="Script" uid="uid://chnci3x8yhh31" path="res://Scenes/closed_eye.gd" id="12_pa6b8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pojwb"]
 normal = Vector2(0, 1)
@@ -33,20 +38,29 @@ position = Vector2(780, 448)
 
 [node name="Rock" parent="." instance=ExtResource("3_6phgx")]
 position = Vector2(265, 364)
-item_name = "rock"
+item = ExtResource("4_8c0lf")
 
 [node name="Cheese" parent="." instance=ExtResource("3_6phgx")]
 position = Vector2(65, 366)
-item_name = "cheese"
-item_image = ExtResource("6_754fn")
+item = ExtResource("5_754fn")
 
 [node name="SaltShaker" parent="." instance=ExtResource("4_81xng")]
 position = Vector2(537, 367)
 will_be_pickup = true
-pickup_texture = ExtResource("5_0f350")
-pickup_name = "glass"
+pickup_item = ExtResource("7_bvt00")
 
-[node name="example_signal_receiver" type="Node2D" parent="."]
+[node name="InventoryManager" type="Node2D" parent="."]
 script = ExtResource("1_754fn")
+inv = ExtResource("9_bvt00")
+
+[node name="Inv_UI" parent="." instance=ExtResource("10_oqgf2")]
+offset_left = 114.0
+offset_right = 154.0
+
+[node name="ClosedEye" type="Sprite2D" parent="."]
+position = Vector2(698, -111)
+scale = Vector2(0.3422266, 0.28808066)
+texture = ExtResource("11_ha31o")
+script = ExtResource("12_pa6b8")
 
 [editable path="SaltShaker"]
