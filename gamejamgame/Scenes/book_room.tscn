@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfuf633hqqloi"]
+
+[ext_resource type="PackedScene" uid="uid://d3yhbyfep3711" path="res://Scenes/level.tscn" id="1_7ow5q"]
+[ext_resource type="Texture2D" uid="uid://c21cvrd4na01x" path="res://GamejamAssets/BookRoomUpdated.PNG" id="2_il1if"]
+[ext_resource type="PackedScene" uid="uid://qantuhs3r4hy" path="res://Scenes/alert_object.tscn" id="3_ihjl8"]
+[ext_resource type="Texture2D" uid="uid://dn4b0jccn7vbv" path="res://GamejamAssets/Timer.png" id="4_50584"]
+[ext_resource type="Texture2D" uid="uid://bdl7110wge8mh" path="res://GamejamAssets/Books.PNG" id="5_apjno"]
+[ext_resource type="Texture2D" uid="uid://pstv5dn4rmmg" path="res://GamejamAssets/Mouse.PNG" id="6_7fmgj"]
+[ext_resource type="Script" uid="uid://bsq5tbdumelm7" path="res://Scripts/mouse.gd" id="7_idf2e"]
+
+[node name="BookRoom" instance=ExtResource("1_7ow5q")]
+
+[node name="LevelBackground" parent="." index="0"]
+position = Vector2(572, 319.00003)
+scale = Vector2(0.3916294, 0.32241046)
+texture = ExtResource("2_il1if")
+
+[node name="Floor" parent="." index="1"]
+position = Vector2(1001, 237)
+
+[node name="CollisionShape2D" parent="Floor" index="0"]
+position = Vector2(-75, -254)
+
+[node name="Player" parent="." index="3"]
+z_index = 1
+position = Vector2(1088, 350.99994)
+
+[node name="Inv_UI" parent="." index="5"]
+offset_left = 834.0
+offset_top = 9.0
+offset_right = 874.0
+offset_bottom = 49.0
+
+[node name="ClosedEye" parent="." index="6"]
+position = Vector2(753, 67.00001)
+
+[node name="alert_object" parent="." index="8" instance=ExtResource("3_ihjl8")]
+visible = false
+position = Vector2(563, 352)
+texture = ExtResource("4_50584")
+will_remove = false
+is_clickable = false
+
+[node name="Books" type="Sprite2D" parent="." index="9"]
+z_index = 1
+position = Vector2(570, 321)
+scale = Vector2(0.39706236, 0.32352227)
+texture = ExtResource("5_apjno")
+
+[node name="Mouse" type="Sprite2D" parent="." index="10"]
+position = Vector2(550, 234)
+scale = Vector2(0.4737148, 0.40954044)
+texture = ExtResource("6_7fmgj")
+script = ExtResource("7_idf2e")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbkss1rrwlwet"]
+
+[ext_resource type="PackedScene" uid="uid://d3yhbyfep3711" path="res://Scenes/level.tscn" id="1_xacmw"]
+[ext_resource type="PackedScene" uid="uid://c7yhf5wpwcl0y" path="res://Scenes/pickup_object.tscn" id="2_rgklm"]
+[ext_resource type="Texture2D" uid="uid://bfuqnqctyxw7x" path="res://GamejamAssets/CageRoom.png" id="2_v1nbb"]
+[ext_resource type="Resource" uid="uid://cigxqntt0smsp" path="res://resources/rock.tres" id="3_cuy7h"]
+
+[node name="CageRoom" instance=ExtResource("1_xacmw")]
+
+[node name="Rock" parent="." index="0" instance=ExtResource("2_rgklm")]
+position = Vector2(277, 388)
+item = ExtResource("3_cuy7h")
+
+[node name="LevelBackground" parent="." index="1"]
+position = Vector2(571.00006, 328)
+scale = Vector2(0.39034954, 0.32160148)
+texture = ExtResource("2_v1nbb")

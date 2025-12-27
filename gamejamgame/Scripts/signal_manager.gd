@@ -3,3 +3,4 @@ extends Node
 #Using this makes managing signals easierbecuase we don't need to worry about directly connecting receivers and emitters, especially when some objects are mmade during run time
 signal got_item(item: InvItem)
 signal alert()
+signal got_key_item(key_item)

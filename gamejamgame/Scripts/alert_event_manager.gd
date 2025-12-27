@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var room_item: String # The item you must transform with to 
-
+@onready var inv = preload("res://inventory/playerInv.tres")
 
 const EYE_BAT = preload("res://Scenes/eye_bat.tscn") #loads eyebat scene so we can instantiate it
 @onready var timer: Timer = $Timer #ref var to timer so we can make it start when alert signal is received.
@@ -31,9 +31,14 @@ func _spawn_eye ():
 func _input(event: InputEvent) -> void:
 	if (allow_select):
 		if event.is_action_pressed("1"):
-			item = "rock"
+			if(inv.slots[0].item != null):
+				item = inv.slots[0].item.name
 		elif event.is_action_pressed("2"):
-			item = "cheese"
+			if(inv.slots[1].item != null):
+				item = inv.slots[1].item.name
+		elif(event.is_action_pressed("3")):
+			if (inv.slots[2].item != null):
+				item = inv.slots[2].item.name
 		_transform_player()
 
 func _transform_player(): #add parameter for what item the player uses
@@ -42,15 +47,19 @@ func _transform_player(): #add parameter for what item the player uses
 		"rock":
 			sprite.play("Rock")
 			print("rock!")
+			DataManager.can_move = false;
 		"cheese":
 			sprite.play("Cheese")
 			print("cheese!")
+			DataManager.can_move = false;
 		_:
 			print("oops")
 func _on_timer_timeout() -> void: #once the timer runs out, spawn the bat and see if the player transformed into the right object.
 	allow_select = false;
 	print("times up!")
+	_spawn_eye()
 	if (item != room_item):
-		_spawn_eye()
+		print("Gameover!")
 	else: 
 		sprite.play("Idle")
+		DataManager.can_move = true;

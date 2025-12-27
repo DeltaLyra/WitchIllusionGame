@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgnjtmo7wsolg"]
+
+[ext_resource type="PackedScene" uid="uid://d3yhbyfep3711" path="res://Scenes/level.tscn" id="1_23qos"]
+[ext_resource type="Texture2D" uid="uid://d156j1l5nx7oc" path="res://GamejamAssets/UpdatedKitchen.PNG" id="2_pb1w8"]
+[ext_resource type="PackedScene" uid="uid://qantuhs3r4hy" path="res://Scenes/alert_object.tscn" id="3_6pjjr"]
+[ext_resource type="Texture2D" uid="uid://ccj4nndxcco21" path="res://GamejamAssets/Jar.png" id="4_pb1w8"]
+[ext_resource type="Resource" uid="uid://xqbg7qles2ga" path="res://resources/mushrooms.tres" id="5_cetdd"]
+[ext_resource type="Texture2D" uid="uid://dws64vbnaj8nw" path="res://GamejamAssets/Shelf.png" id="5_jbuf1"]
+
+[node name="Kitchen" instance=ExtResource("1_23qos")]
+
+[node name="LevelBackground" parent="." index="0"]
+position = Vector2(570.00006, 324)
+scale = Vector2(0.38983607, 0.32180437)
+texture = ExtResource("2_pb1w8")
+
+[node name="Inv_UI" parent="." index="5"]
+offset_left = 835.0
+offset_top = 17.0
+offset_right = 875.0
+offset_bottom = 57.0
+
+[node name="ClosedEye" parent="." index="6"]
+position = Vector2(752, 76.00001)
+
+[node name="AlertEventManager" parent="." index="7"]
+room_item = "cheese"
+
+[node name="alert_object" parent="." index="8" instance=ExtResource("3_6pjjr")]
+z_index = 1
+position = Vector2(790, 234)
+scale = Vector2(0.7409392, 0.79495126)
+texture = ExtResource("4_pb1w8")
+will_be_pickup = true
+pickup_item = ExtResource("5_cetdd")
+
+[node name="Shelf" type="Sprite2D" parent="." index="9"]
+position = Vector2(810, 249)
+scale = Vector2(0.19709665, 0.19967124)
+texture = ExtResource("5_jbuf1")

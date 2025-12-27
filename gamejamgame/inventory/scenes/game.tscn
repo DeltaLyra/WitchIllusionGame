@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://n4fqdrpqqvjq" path="res://inventory/scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://dfp2b87mjn076" path="res://inventory/assests/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://dm2w0prhyq68m" path="res://inventory/scenes/coin.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://cre8jrcwcmfau" path="res://inventory/stick.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cre8jrcwcmfau" path="res://inventory/scenes/stick.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://c7yhf5wpwcl0y" path="res://Scenes/pickup_object.tscn" id="5_b8og7"]
 [ext_resource type="PackedScene" uid="uid://b7e7svbunxjiq" path="res://Scenes/inventory_manager.tscn" id="5_g40u6"]
 [ext_resource type="Resource" uid="uid://dy6ivxsa7bode" path="res://inventory/playerInv.tres" id="6_tc7k3"]

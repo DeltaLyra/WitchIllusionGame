@@ -6,6 +6,7 @@ extends Control
 func _ready():
 	inv.update.connect(update_slots)
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	var slot_array = inv.slots
 	update_slots()
 
 func update_slots():

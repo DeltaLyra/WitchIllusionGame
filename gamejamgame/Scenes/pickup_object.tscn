@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://qsqcm4q8wdva" path="res://Scripts/pickup_object.gd" id="1_kl40d"]
 [ext_resource type="Texture2D" uid="uid://pie03ctd5jat" path="res://Assets/PlaceHolderRockItem.png" id="2_vi6ql"]
-[ext_resource type="Texture2D" uid="uid://dub4qai1uevf1" path="res://Assets/PlaceHolderItemIcon.jpg" id="3_vi6ql"]
+[ext_resource type="Texture2D" uid="uid://cjwutrnjrfm3m" path="res://GamejamAssets/ItemIcon.png" id="3_vi6ql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a60s"]
 size = Vector2(174, 156)
 
 [node name="PickupObject" type="Area2D"]
+z_index = 2
 script = ExtResource("1_kl40d")
 
 [node name="Object" type="Sprite2D" parent="."]

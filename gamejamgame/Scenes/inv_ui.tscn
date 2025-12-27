@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bn5lk0eou0ta8"]
 
-[ext_resource type="Script" path="res://inventory/inv_UI.gd" id="1_owgac"]
-[ext_resource type="Texture2D" path="res://inventory/assests/sprites/inventory-background.png" id="2_khj2i"]
-[ext_resource type="PackedScene" path="res://inventory/scenes/inv_ui_slot.tscn" id="3_kscwq"]
+[ext_resource type="Script" uid="uid://ba8htj4bxisr1" path="res://inventory/inv_UI.gd" id="1_owgac"]
+[ext_resource type="Texture2D" uid="uid://b8hxeyxo3373a" path="res://inventory/assests/sprites/inventory-background.png" id="2_khj2i"]
+[ext_resource type="PackedScene" uid="uid://glb58of1p7m8" path="res://inventory/scenes/inv_ui_slot.tscn" id="3_kscwq"]
 
 [node name="Inv_UI" type="Control"]
 layout_mode = 3
@@ -31,7 +31,7 @@ offset_right = 79.86775
 offset_bottom = 60.0
 scale = Vector2(0.48, 0.657)
 pivot_offset = Vector2(0.5, 0.5)
-columns = 4
+columns = 3
 
 [node name="inv_ui_slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kscwq")]
 layout_mode = 2
