@@ -23,6 +23,10 @@ SignalManager="*res://Scripts/signal_manager.gd"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
 
 [input]
 
