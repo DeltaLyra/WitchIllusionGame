@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtouevoed70gg"]
+[gd_scene load_steps=8 format=3 uid="uid://dtouevoed70gg"]
 
 [ext_resource type="Script" uid="uid://bwybivrva1c2v" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://jyntiw7arf1f" path="res://Assets/PlaceHolderPlayer.png" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://bea3nnsev4jdv" path="res://Assets/PlaceHolderCheeseItem.png" id="2_vgqql"]
+[ext_resource type="Texture2D" uid="uid://pie03ctd5jat" path="res://Assets/PlaceHolderRockItem.png" id="4_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")
@@ -11,10 +13,26 @@ region = Rect2(0, 0, 1200, 1400)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_vgqql")
+}],
+"loop": true,
+"name": &"Cheese",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_cvnsp")
 }],
 "loop": true,
 "name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fkybt")
+}],
+"loop": true,
+"name": &"Rock",
 "speed": 5.0
 }]
 

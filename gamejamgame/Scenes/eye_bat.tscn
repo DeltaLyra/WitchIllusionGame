@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyrf1rbxp1sro"]
+
+[ext_resource type="Texture2D" uid="uid://c3ylg2ss7fdac" path="res://Assets/PlaceHolderEyeBat.png" id="1_be7oe"]
+
+[sub_resource type="Animation" id="Animation_bwoag"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(119, 157)]
+}
+
+[sub_resource type="Animation" id="Animation_be7oe"]
+resource_name = "fly_around"
+length = 3.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.566667, 1.36667, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(119, 157), Vector2(376, 290), Vector2(670, 161), Vector2(445, 118)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ljc8k"]
+_data = {
+&"RESET": SubResource("Animation_bwoag"),
+&"fly_around": SubResource("Animation_be7oe")
+}
+
+[node name="EyeBat" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(119, 157)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_be7oe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ljc8k")
+}
