@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddpd2jpcem440"]
+[gd_scene load_steps=3 format=3 uid="uid://ddpd2jpcem440"]
+
+[ext_resource type="Script" uid="uid://bvrskvrj4svr0" path="res://button.gd" id="1_06t4h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
 bg_color = Color(0.5921569, 0.6039216, 0.59607846, 0.81960785)
-corner_radius_top_left = 16
+corner_radius_top_left = 20
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
@@ -10,17 +12,14 @@ corner_radius_bottom_left = 16
 [node name="MainMenu" type="Node2D"]
 
 [node name="Button" type="Button" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -315.0
 offset_top = -263.0
 offset_right = 315.0
 offset_bottom = 263.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0.09614309, 0.11063365, 0.09402045, 1)
+theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
 text = "Game start"
+script = ExtResource("1_06t4h")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
