@@ -1,4 +1,5 @@
 extends Node2D
+@onready var timer_2: Timer = $Timer2
 
 @export var room_item: String # The item you must transform with to 
 @onready var inv = preload("res://inventory/playerInv.tres")
@@ -62,6 +63,9 @@ func _on_timer_timeout() -> void: #once the timer runs out, spawn the bat and se
 	allow_select = false;
 	print("times up!")
 	_spawn_eye()
+	timer_2.start()
+
+func _on_timer_2_timeout() -> void:
 	if (item != room_item):
 		print("Gameover!")
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
