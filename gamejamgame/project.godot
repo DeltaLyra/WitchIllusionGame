@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameJamGame"
-run/main_scene="uid://bhw6wla03kf07"
+run/main_scene="uid://bbkss1rrwlwet"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 SignalManager="*res://Scripts/signal_manager.gd"
 DataManager="*res://Scripts/data_manager.gd"
+Fade="*res://Scenes/fade.tscn"
+GlobalAudioStreamPlayer="*res://Scenes/audio_stream_player.tscn"
 
 [display]
 

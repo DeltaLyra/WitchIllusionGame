@@ -1,17 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfuf633hqqloi"]
+[gd_scene load_steps=11 format=3 uid="uid://bfuf633hqqloi"]
 
 [ext_resource type="PackedScene" uid="uid://d3yhbyfep3711" path="res://Scenes/level.tscn" id="1_7ow5q"]
-[ext_resource type="Texture2D" uid="uid://c21cvrd4na01x" path="res://GamejamAssets/BookRoomUpdated.PNG" id="2_il1if"]
+[ext_resource type="Texture2D" uid="uid://bl7ify7ia8hiv" path="res://GamejamAssets/UpdUpdBookRoom.PNG" id="2_il1if"]
 [ext_resource type="PackedScene" uid="uid://qantuhs3r4hy" path="res://Scenes/alert_object.tscn" id="3_ihjl8"]
 [ext_resource type="Texture2D" uid="uid://dn4b0jccn7vbv" path="res://GamejamAssets/Timer.png" id="4_50584"]
 [ext_resource type="Texture2D" uid="uid://bdl7110wge8mh" path="res://GamejamAssets/Books.PNG" id="5_apjno"]
 [ext_resource type="Texture2D" uid="uid://pstv5dn4rmmg" path="res://GamejamAssets/Mouse.PNG" id="6_7fmgj"]
-[ext_resource type="Script" uid="uid://bsq5tbdumelm7" path="res://Scripts/mouse.gd" id="7_idf2e"]
+[ext_resource type="Script" uid="uid://bsq5tbdumelm7" path="res://Scripts/cheeseMouse.gd" id="7_idf2e"]
+[ext_resource type="PackedScene" uid="uid://ccuqysv56rsg6" path="res://Scenes/interact.tscn" id="8_apjno"]
+[ext_resource type="PackedScene" uid="uid://c7yhf5wpwcl0y" path="res://Scenes/pickup_object.tscn" id="9_idf2e"]
+[ext_resource type="Resource" uid="uid://bs2s41vsyh2i0" path="res://resources/cheese.tres" id="10_jixmm"]
 
 [node name="BookRoom" instance=ExtResource("1_7ow5q")]
+level_num = 3
 
 [node name="LevelBackground" parent="." index="0"]
-position = Vector2(572, 319.00003)
+position = Vector2(572.00006, 319.00003)
 scale = Vector2(0.3916294, 0.32241046)
 texture = ExtResource("2_il1if")
 
@@ -26,20 +30,20 @@ z_index = 1
 position = Vector2(1088, 350.99994)
 
 [node name="Inv_UI" parent="." index="5"]
-offset_left = 834.0
-offset_top = 9.0
-offset_right = 874.0
+offset_left = 755.00006
+offset_top = 9.000001
+offset_right = 795.00006
 offset_bottom = 49.0
 
-[node name="ClosedEye" parent="." index="6"]
-position = Vector2(753, 67.00001)
+[node name="AlertEventManager" parent="." index="7"]
+room_item = "paper"
 
-[node name="alert_object" parent="." index="8" instance=ExtResource("3_ihjl8")]
+[node name="Timer" parent="." index="8" instance=ExtResource("3_ihjl8")]
 visible = false
 position = Vector2(563, 352)
 texture = ExtResource("4_50584")
 will_remove = false
-is_clickable = false
+prequisite = "timer"
 
 [node name="Books" type="Sprite2D" parent="." index="9"]
 z_index = 1
@@ -47,8 +51,23 @@ position = Vector2(570, 321)
 scale = Vector2(0.39706236, 0.32352227)
 texture = ExtResource("5_apjno")
 
-[node name="Mouse" type="Sprite2D" parent="." index="10"]
+[node name="CheeseMouse" type="Sprite2D" parent="." index="10"]
 position = Vector2(550, 234)
 scale = Vector2(0.4737148, 0.40954044)
 texture = ExtResource("6_7fmgj")
 script = ExtResource("7_idf2e")
+
+[node name="NextLevel" parent="." index="12"]
+position = Vector2(-104, 400)
+
+[node name="Interact" parent="." index="14" instance=ExtResource("8_apjno")]
+z_index = 2
+position = Vector2(445, 207)
+pre_text = "You walk up to the other mouse, hoping for conversation. It just keeps eating, and hisses???"
+post_text = "You set the timer. "
+prereq = "timer"
+
+[node name="Cheese" parent="." index="15" instance=ExtResource("9_idf2e")]
+position = Vector2(596, 604)
+item = ExtResource("10_jixmm")
+is_clickable = false

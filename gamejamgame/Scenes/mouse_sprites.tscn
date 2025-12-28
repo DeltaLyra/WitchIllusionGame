@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://21bgj4431crf"]
+
+[ext_resource type="PackedScene" uid="uid://dno45fyd7ld0j" path="res://Scenes/idle.tscn" id="1_7boht"]
+[ext_resource type="Texture2D" uid="uid://1qkswck3f0r5" path="res://GamejamAssets/Mouse_Sprites.PNG" id="1_34xxd"]
+
+[node name="MouseSprites" type="Node2D"]
+
+[node name="Idle" parent="." instance=ExtResource("1_7boht")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_34xxd")
+region_enabled = true
+region_rect = Rect2(1104, 840, 1088, 752)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("1_34xxd")
+region_enabled = true
+region_rect = Rect2(16, 800, 1040, 808)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture = ExtResource("1_34xxd")
+region_enabled = true
+region_rect = Rect2(672, 0, 760, 784)

@@ -8,11 +8,11 @@
 size = Vector2(174, 156)
 
 [node name="PickupObject" type="Area2D"]
-z_index = 2
+z_index = 4
 script = ExtResource("1_kl40d")
 
 [node name="Object" type="Sprite2D" parent="."]
-position = Vector2(26, 0)
+position = Vector2(50, -5)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("2_vi6ql")
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dyrf1rbxp1sro"]
 
-[ext_resource type="Texture2D" uid="uid://c3ylg2ss7fdac" path="res://Assets/PlaceHolderEyeBat.png" id="1_be7oe"]
+[ext_resource type="Texture2D" uid="uid://dlimbebyc0cwk" path="res://GamejamAssets/EyeBat.png" id="1_be7oe"]
 
 [sub_resource type="Animation" id="Animation_bwoag"]
 length = 0.001
@@ -41,6 +41,8 @@ _data = {
 }
 
 [node name="EyeBat" type="Node2D"]
+z_index = 3
+scale = Vector2(1.8808032, 1.5098872)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(119, 157)

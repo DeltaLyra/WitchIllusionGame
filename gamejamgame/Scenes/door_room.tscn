@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4e44bmv7v4a8"]
+
+[ext_resource type="PackedScene" uid="uid://d3yhbyfep3711" path="res://Scenes/level.tscn" id="1_3mull"]
+[ext_resource type="Texture2D" uid="uid://c3dvexkor8ftq" path="res://GamejamAssets/DoorRoom.PNG" id="2_fuoe8"]
+[ext_resource type="PackedScene" uid="uid://ccuqysv56rsg6" path="res://Scenes/interact.tscn" id="3_fuoe8"]
+
+[node name="DoorRoom" instance=ExtResource("1_3mull")]
+level_num = 5
+
+[node name="Interact" parent="." index="0" instance=ExtResource("3_fuoe8")]
+position = Vector2(425, 145)
+scale = Vector2(0.92703915, 1.113712)
+priority = 3
+pre_text = "A door within a door. For a pet, perhaps? It's your only escape, locked behind a particuarly shiny keyhole. "
+post_text = "You fit the key into the keyhole.."
+prereq = "key"
+
+[node name="LevelBackground" parent="." index="1"]
+scale = Vector2(0.3940018, 0.32235193)
+texture = ExtResource("2_fuoe8")
+
+[node name="Control" parent="." index="9"]
+z_index = -3

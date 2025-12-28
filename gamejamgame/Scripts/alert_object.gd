@@ -10,14 +10,22 @@ var alert_object_pos #so we can put the pickup object in the same spot. only giv
 @export var pickup_item: InvItem #the pickup item this will become, if it becomes a pickup item. Given a value in instances of this scene
 @export var will_remove = true
 @export var is_clickable = true # some only show up under certain conditions
-
+@export var prequisite: String
 func _ready():
 	alert_object_parent = get_parent() #Only give var a value once its ready so we dont get null
 	alert_object_pos = position #Also need to do when ready so it actually has a position to give
 	item.texture = texture
+	if(prequisite == "key" and DataManager.has_key == true):
+		is_clickable = true
+	elif(prequisite == "mushrooms" and DataManager.has_mushrooms == true):
+		is_clickable = true
+	elif(prequisite == "timer" and DataManager.has_timer == true):
+		is_clickable = true
+		self.visible = true
 #When the item is hovered over, the click icon will appear. When it leaves, it will disappear.
 func _on_mouse_entered() -> void:
-	icon.visible = true
+	if(is_clickable):
+		icon.visible = true
 
 func _on_mouse_exited() -> void:
 	icon.visible = false
@@ -37,4 +45,4 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				pickup_object.item = pickup_item
 				alert_object_parent.add_child(pickup_object) #add as a child to the level (the parent of this scene)
 				print("Worked :D")
-		
+	

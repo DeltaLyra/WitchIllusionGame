@@ -1,19 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtouevoed70gg"]
+[gd_scene load_steps=10 format=3 uid="uid://dtouevoed70gg"]
 
 [ext_resource type="Script" uid="uid://bwybivrva1c2v" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://jyntiw7arf1f" path="res://Assets/PlaceHolderPlayer.png" id="1_v0iea"]
-[ext_resource type="Texture2D" uid="uid://bea3nnsev4jdv" path="res://Assets/PlaceHolderCheeseItem.png" id="2_vgqql"]
-[ext_resource type="Texture2D" uid="uid://pie03ctd5jat" path="res://Assets/PlaceHolderRockItem.png" id="4_fkybt"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
-atlas = ExtResource("1_v0iea")
-region = Rect2(0, 0, 1200, 1400)
+[ext_resource type="Texture2D" uid="uid://c8j6r2luhvtno" path="res://GamejamAssets/Cheese.png" id="2_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://dndq354v0cuas" path="res://GamejamAssets/MouseIdle.PNG" id="3_fkybt"]
+[ext_resource type="Texture2D" uid="uid://cl10bkvcaesk7" path="res://GamejamAssets/BlankPaper.PNG" id="4_3smsa"]
+[ext_resource type="Texture2D" uid="uid://vv4hcmyp8rfa" path="res://GamejamAssets/Rock.png" id="4_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://cm4pke8kjvqu2" path="res://GamejamAssets/MouseStartRun.PNG" id="5_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://pme2j0gp2ahf" path="res://GamejamAssets/MouseRun.PNG" id="6_x3wgy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6t5aa"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vgqql")
+"texture": ExtResource("2_x3wgy")
 }],
 "loop": true,
 "name": &"Cheese",
@@ -21,7 +20,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cvnsp")
+"texture": ExtResource("3_fkybt")
 }],
 "loop": true,
 "name": &"Idle",
@@ -29,10 +28,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_fkybt")
+"texture": ExtResource("4_3smsa")
+}],
+"loop": true,
+"name": &"Paper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x3wgy")
 }],
 "loop": true,
 "name": &"Rock",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_x3wgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x3wgy")
+}],
+"loop": true,
+"name": &"Walk",
 "speed": 5.0
 }]
 
@@ -41,13 +59,15 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 z_index = 2
 scale = Vector2(1.7, 1.7)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.999996, -3)
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.1227031, 0.115648784)
 sprite_frames = SubResource("SpriteFrames_6t5aa")
-animation = &"Idle"
+animation = &"Paper"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2.52734, 5.2875)

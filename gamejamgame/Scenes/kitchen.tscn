@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgnjtmo7wsolg"]
+[gd_scene load_steps=9 format=3 uid="uid://cgnjtmo7wsolg"]
 
 [ext_resource type="PackedScene" uid="uid://d3yhbyfep3711" path="res://Scenes/level.tscn" id="1_23qos"]
 [ext_resource type="Texture2D" uid="uid://d156j1l5nx7oc" path="res://GamejamAssets/UpdatedKitchen.PNG" id="2_pb1w8"]
@@ -6,8 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://ccj4nndxcco21" path="res://GamejamAssets/Jar.png" id="4_pb1w8"]
 [ext_resource type="Resource" uid="uid://xqbg7qles2ga" path="res://resources/mushrooms.tres" id="5_cetdd"]
 [ext_resource type="Texture2D" uid="uid://dws64vbnaj8nw" path="res://GamejamAssets/Shelf.png" id="5_jbuf1"]
+[ext_resource type="PackedScene" uid="uid://c7yhf5wpwcl0y" path="res://Scenes/pickup_object.tscn" id="7_cetdd"]
+[ext_resource type="Resource" uid="uid://bnvln0ihy83ei" path="res://resources/timer.tres" id="8_o8uib"]
 
 [node name="Kitchen" instance=ExtResource("1_23qos")]
+level_num = 4
 
 [node name="LevelBackground" parent="." index="0"]
 position = Vector2(570.00006, 324)
@@ -15,13 +18,10 @@ scale = Vector2(0.38983607, 0.32180437)
 texture = ExtResource("2_pb1w8")
 
 [node name="Inv_UI" parent="." index="5"]
-offset_left = 835.0
-offset_top = 17.0
-offset_right = 875.0
-offset_bottom = 57.0
-
-[node name="ClosedEye" parent="." index="6"]
-position = Vector2(752, 76.00001)
+offset_left = 755.00006
+offset_top = 16.000002
+offset_right = 795.00006
+offset_bottom = 56.0
 
 [node name="AlertEventManager" parent="." index="7"]
 room_item = "cheese"
@@ -38,3 +38,8 @@ pickup_item = ExtResource("5_cetdd")
 position = Vector2(810, 249)
 scale = Vector2(0.19709665, 0.19967124)
 texture = ExtResource("5_jbuf1")
+
+[node name="Timer" parent="." index="13" instance=ExtResource("7_cetdd")]
+position = Vector2(94, 395)
+item = ExtResource("8_o8uib")
+key_item = "timer"

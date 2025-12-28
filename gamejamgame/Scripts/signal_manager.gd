@@ -4,3 +4,6 @@ extends Node
 signal got_item(item: InvItem)
 signal alert()
 signal got_key_item(key_item)
+signal display_text(text)
+signal timer_went_off
+signal paper_ripped

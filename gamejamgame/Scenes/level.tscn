@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3yhbyfep3711"]
+[gd_scene load_steps=13 format=3 uid="uid://d3yhbyfep3711"]
 
 [ext_resource type="Script" uid="uid://cvgi2ir73vyr5" path="res://Scripts/example_singal_receiver.gd" id="1_754fn"]
+[ext_resource type="Script" uid="uid://cbiqx1x3l6l0c" path="res://Scripts/level.gd" id="1_oqgf2"]
 [ext_resource type="Texture2D" uid="uid://dxyrjlxx8l7f4" path="res://Assets/PlaceHolderBackground.jpg" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://dtouevoed70gg" path="res://Scenes/player.tscn" id="2_k5f4k"]
 [ext_resource type="Resource" uid="uid://dy6ivxsa7bode" path="res://inventory/playerInv.tres" id="9_bvt00"]
-[ext_resource type="PackedScene" uid="uid://dq3v4yykhep0" path="res://Scenes/control.tscn" id="9_oqgf2"]
+[ext_resource type="PackedScene" uid="uid://dq3v4yykhep0" path="res://Scenes/text.tscn" id="9_oqgf2"]
 [ext_resource type="PackedScene" uid="uid://cdbvm81bc42gk" path="res://inventory/scenes/inv_ui.tscn" id="10_oqgf2"]
 [ext_resource type="Texture2D" uid="uid://db4l1710wlwrh" path="res://GamejamAssets/ClosedEye.png" id="11_ha31o"]
 [ext_resource type="Script" uid="uid://chnci3x8yhh31" path="res://Scripts/closed_eye.gd" id="12_pa6b8"]
@@ -14,10 +15,15 @@
 normal = Vector2(0, 1)
 distance = 163.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha31o"]
+size = Vector2(179.5, 632)
+
 [node name="Level" type="Node2D"]
+script = ExtResource("1_oqgf2")
 
 [node name="LevelBackground" type="Sprite2D" parent="."]
-position = Vector2(455, 322)
+position = Vector2(576, 318.00003)
+scale = Vector2(1.260266, 1.0175667)
 texture = ExtResource("1_tumq0")
 
 [node name="Floor" type="StaticBody2D" parent="."]
@@ -37,14 +43,15 @@ script = ExtResource("1_754fn")
 inv = ExtResource("9_bvt00")
 
 [node name="Inv_UI" parent="." instance=ExtResource("10_oqgf2")]
-offset_left = 605.0
-offset_top = 63.0
-offset_right = 645.0
-offset_bottom = 103.0
+offset_left = 754.00006
+offset_top = 13.000006
+offset_right = 794.00006
+offset_bottom = 53.000008
+scale = Vector2(1.3105096, 1.2940787)
 
 [node name="ClosedEye" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(526, 118)
+position = Vector2(680, 83)
 scale = Vector2(0.11728751, 0.09791509)
 texture = ExtResource("11_ha31o")
 script = ExtResource("12_pa6b8")
@@ -52,3 +59,30 @@ script = ExtResource("12_pa6b8")
 [node name="AlertEventManager" parent="." instance=ExtResource("13_pa6b8")]
 
 [node name="Control" parent="." instance=ExtResource("9_oqgf2")]
+offset_left = 43.0
+offset_top = 43.0
+offset_right = 83.0
+offset_bottom = 83.0
+
+[node name="NextLevel" type="Area2D" parent="."]
+position = Vector2(-104, 399.99997)
+scale = Vector2(1.0276237, 0.38074842)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevel"]
+position = Vector2(8.758057, 28.89038)
+shape = SubResource("RectangleShape2D_ha31o")
+
+[node name="PrevLevel" type="Area2D" parent="."]
+position = Vector2(1230, 330)
+scale = Vector2(1, 0.32398105)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PrevLevel"]
+position = Vector2(15.25, 220)
+shape = SubResource("RectangleShape2D_ha31o")
+
+[connection signal="body_entered" from="NextLevel" to="Player" method="_on_next_level_body_entered"]
+[connection signal="body_entered" from="PrevLevel" to="Player" method="_on_prev_level_body_entered"]

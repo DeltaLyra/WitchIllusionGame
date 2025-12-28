@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq3v4yykhep0"]
+
+[ext_resource type="Script" uid="uid://cyashidfh738j" path="res://Scripts/text.gd" id="1_mw1po"]
+[ext_resource type="FontFile" uid="uid://b6hor1x8wp7qu" path="res://inventory/assests/fonts/PixelOperator8.ttf" id="2_h1pno"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyicd"]
+bg_color = Color(0.32866383, 0.17059982, 0.07053494, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Text" type="Control"]
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("1_mw1po")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(9.008682, 3.8674188)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oyicd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 2.1090763
+offset_top = 5.1714077
+offset_right = 85.324615
+offset_bottom = 45.17141
+scale = Vector2(0.44820175, 0.96528196)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("2_h1pno")
+theme_override_font_sizes/normal_font_size = 4
+text = "This is text"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -6,12 +6,26 @@
 [ext_resource type="Resource" uid="uid://cigxqntt0smsp" path="res://resources/rock.tres" id="3_cuy7h"]
 
 [node name="CageRoom" instance=ExtResource("1_xacmw")]
+position = Vector2(-1, 1)
+level_num = 1
 
 [node name="Rock" parent="." index="0" instance=ExtResource("2_rgklm")]
+z_index = 1
 position = Vector2(277, 388)
 item = ExtResource("3_cuy7h")
+key_item = "n/a"
 
 [node name="LevelBackground" parent="." index="1"]
-position = Vector2(571.00006, 328)
+position = Vector2(572, 317)
 scale = Vector2(0.39034954, 0.32160148)
 texture = ExtResource("2_v1nbb")
+
+[node name="Floor" parent="." index="2"]
+position = Vector2(705, 186)
+
+[node name="Player" parent="." index="4"]
+position = Vector2(569, 409.99997)
+
+[node name="PrevLevel" parent="." index="11"]
+collision_layer = 0
+collision_mask = 0

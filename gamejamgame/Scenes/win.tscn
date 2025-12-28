@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgoex3ews4igc"]
+
+[ext_resource type="FontFile" uid="uid://b6hor1x8wp7qu" path="res://inventory/assests/fonts/PixelOperator8.ttf" id="1_j84t1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mm25"]
+bg_color = Color(0.0011894673, 0.11821253, 0.07092992, 1)
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.898666, 16.296717)
+theme_override_styles/panel = SubResource("StyleBoxFlat_3mm25")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 2.1090763
+offset_top = 5.1714077
+offset_right = 85.324615
+offset_bottom = 45.17141
+scale = Vector2(0.45016843, 0.9700774)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_j84t1")
+theme_override_font_sizes/normal_font_size = 4
+text = "You won!
+yyaya
+
+"

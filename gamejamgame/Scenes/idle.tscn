@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dno45fyd7ld0j"]
+
+[ext_resource type="Texture2D" uid="uid://1qkswck3f0r5" path="res://GamejamAssets/Mouse_Sprites.PNG" id="1_l5lv4"]
+
+[node name="Idle" type="Sprite2D"]
+scale = Vector2(1.0365278, 1.0693682)
+texture = ExtResource("1_l5lv4")
+region_enabled = true
+region_rect = Rect2(0, 0, 680, 760)
+region_filter_clip_enabled = true

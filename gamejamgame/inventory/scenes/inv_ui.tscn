@@ -9,6 +9,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 script = ExtResource("1_tmo6b")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
@@ -31,13 +32,17 @@ offset_right = 79.86775
 offset_bottom = 60.0
 scale = Vector2(0.48, 0.657)
 pivot_offset = Vector2(0.5, 0.5)
+mouse_filter = 2
 columns = 4
 
 [node name="inv_ui_slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_2nutk")]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="inv_ui_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_2nutk")]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="inv_ui_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_2nutk")]
 layout_mode = 2
+mouse_filter = 2
